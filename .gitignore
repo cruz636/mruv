@@ -1,12 +1,82 @@
-*.class
+package mruv;
+import java.util.*;
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
 
-# Package Files #
-*.jar
-*.war
-*.ear
+public class mruv {
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+	public static void main(String[] args) {
+		String distI,velI,dist,ti,ac;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Ingrese los datos que le piden a continuación");
+		System.out.printf(" ");
+		System.out.printf("Distancia Inicial(en metros) >> ");
+		distI = sc.nextLine();
+		System.out.printf("Velocidad Inicial(en metros/segundos) >> ");
+		velI = sc.nextLine();
+		System.out.printf("Aceleración(en metros/segundoscuadrados) >> ");
+		ac = sc.nextLine();
+		System.out.printf("Tiempo (en segundos) >> ");
+		ti = sc.nextLine();
+		System.out.printf("Distancia recorrida(en metros) >> ");
+		dist = sc.nextLine();
+		
+		
+	// evaluar cual de los datos en una X, y luego pasar todos los otros datos a double, asi 
+		//se puede trabajar con ellos
+		
+	    if(distI.equalsIgnoreCase("x")){
+	    	System.out.println("Calculando la Distancia Inicial con los datos provistos...");
+	    	double velIb = Double.parseDouble(velI);
+	    	double distb = Double.parseDouble(dist);
+	    	double tib = Double.parseDouble(ti);
+	    	double acb = Double.parseDouble(ac);
+	    	
+	    	double DiR;
+	    	DiR = distb - (velIb*tib + (0.5*acb)*(tib*tib));
+	    	System.out.println("La distancia inicial es "+DiR+" metros");
+	    	
+	    	
+	    }
+	    if(velI.equalsIgnoreCase("x")){
+	    	System.out.println("Calculando velocidad Inicial con los datos provistos...");
+	    	double distIb = Double.parseDouble(distI);
+	    	double distb= Double.parseDouble(dist);
+	    	double tib = Double.parseDouble(ti);
+	    	double acb = Double.parseDouble(ac);
+	    	
+	    	double viR = (distb - distIb - (0.5 * acb * (tib*tib)))/tib;
+	    	System.out.println("La velocidad Inicial es de " +  viR + " metros/segundos");
+	    }
+	    if(dist.equalsIgnoreCase("x")){
+	    	System.out.println("Calculando la distancia final con los datos provistos...");
+	    	double distIb = Double.parseDouble(distI);
+	    	double velIb = Double.parseDouble(velI);
+	    	double tib = Double.parseDouble(ti);
+	    	double acb = Double.parseDouble(ac);
+	    	
+	    	double distR = distIb + (velIb * tib) + (0.5 * acb * (tib*tib));
+	    	System.out.println("La ditancia recorrida es de " + distR + "metros");
+	    }
+	    //aceleracion
+	    if(ac.equalsIgnoreCase("x")){
+	    	System.out.println("Calculando la aceleración con los datos provistos...");
+	    	double distIb = Double.parseDouble(distI);
+	    	double velIb = Double.parseDouble(velI);
+	    	double tib = Double.parseDouble(ti);
+	    	double distb = Double.parseDouble(dist);
+	    	
+	    	double acR = 23.8;
+	    	
+	    	System.out.println("La ditancia recorrida es de "  + "metros");
+	    	
+	    }
+	    //tiempo
+	    
+		
+		
+
+	}
+
+}
+
